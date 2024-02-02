@@ -195,3 +195,29 @@ summary;
 const pagesRange = pages > 1000 ? "over a thousand" : "less than one thousand ";
 pagesRange;
 console.log(`The book has ${pagesRange} pages`);
+
+// * short circuiting
+console.log(true && "Some string");
+console.log(false && "Some string");
+console.log(hasMovieAdaptation && "This book has a movie");
+
+// flasy: 0, '', null, undefined
+console.log("jonas" && "Some string");
+console.log(0 && "Some string");
+
+// OR
+console.log(true || "Some string");
+console.log(false || "Some string");
+
+console.log(book.translations.spanish);
+
+const spanishTranslation = book.translations.spanish || "NOT TRANSLATE";
+spanishTranslation;
+
+console.log(book.reviews.librarything.reviewsCount);
+const countWrong = book.reviews.librarything.reviewsCount || "no data";
+countWrong;
+
+// Nullish coalesce Operator; return value when first is null or undefined but not when it is 0 or empty string
+const count = book.reviews.librarything.reviewsCount ?? "no data";
+count;
