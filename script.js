@@ -144,7 +144,7 @@ function getBook(id) {
 }
 
 // * Destructuring & spread Operator
-
+/*
 const book = getBook(3);
 
 // const title = book.title;
@@ -231,3 +231,28 @@ function getTotalReviewCount(book) {
 }
 
 console.log(getTotalReviewCount(book))
+*/
+
+// * Map
+
+function getTotalReviewCount(book) {
+  const goodReads = book.reviews?.goodreads?.reviewsCount;
+  const librarything = book.reviews?.librarything?.reviewsCount ?? 0;
+  librarything
+  return goodReads + librarything;
+}
+
+const books = getBooks();
+const x = [1, 2, 3, 4, 5].map((el) => el * 2);
+console.log(x);
+
+const title = books.map((el) => el.title);
+title;
+
+const essentialData = books.map((book) => ({
+  title: book.title,
+  author: book.author,
+  reviewsCount: getTotalReviewCount(book)
+}));
+
+essentialData;
