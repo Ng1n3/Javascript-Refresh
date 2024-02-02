@@ -238,7 +238,7 @@ console.log(getTotalReviewCount(book))
 function getTotalReviewCount(book) {
   const goodReads = book.reviews?.goodreads?.reviewsCount;
   const librarything = book.reviews?.librarything?.reviewsCount ?? 0;
-  librarything
+  librarything;
   return goodReads + librarything;
 }
 
@@ -252,7 +252,18 @@ title;
 const essentialData = books.map((book) => ({
   title: book.title,
   author: book.author,
-  reviewsCount: getTotalReviewCount(book)
+  reviewsCount: getTotalReviewCount(book),
 }));
 
 essentialData;
+
+// * Filter
+const longBooks = books
+  .filter((book) => book.pages > 500)
+  .filter((book) => book.hasMovieAdaptation);
+longBooks;
+
+const adventureBooks = books.filter((book) =>
+  book.genres.includes("adventure")
+).map(book => book.title);
+adventureBooks;
