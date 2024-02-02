@@ -235,7 +235,7 @@ console.log(getTotalReviewCount(book))
 
 // * Map
 
-function getTotalReviewCount(book) {
+/*function getTotalReviewCount(book) {
   const goodReads = book.reviews?.goodreads?.reviewsCount;
   const librarything = book.reviews?.librarything?.reviewsCount ?? 0;
   librarything;
@@ -300,4 +300,12 @@ booksAfterDelete;
 // 3) Update the book object in the array
 const booksAfterUpdate = booksAfterDelete.map(book => book.id === 1 ? {}: book)
 booksAfterUpdate;
+*/
 
+// Asynchronous Javascript Promises
+fetch("https://jsonplaceholder.typicode.com/todos")
+  .then((res) => res.json())
+  .then((data) => console.log(data))
+  .catch((err) => console.log(err));
+
+console.log("jonas");
