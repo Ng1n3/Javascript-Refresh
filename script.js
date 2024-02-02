@@ -168,8 +168,12 @@ const updatedBook = {
   ...book,
   // Adding a new property 
   moviePublicationDate: "2001-12-19",
-  
+
   // overwriting an existing property
   pages: 1210,
 };
 updatedBook;
+
+// * Template literal
+const summary = `${title}, a ${pages}-page long book was written by ${author} and published in ${publicationDate.split('-')[0]}`;
+summary;
